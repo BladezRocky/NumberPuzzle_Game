@@ -45,10 +45,38 @@ class CustomNumberPuzzleControl extends NumberPuzzleControl {
 		int arr[] = new int[15];
 		
 		//Your logic here
-		int a = getRandomNumber();
+				for int (i=0; i<15; i++) {
+			int a = getRandomNumber();
+			
+			while ((a>15 || a<1) || inArray(arr, a, i)) {
+				
+				a = getRandomNumber();
+				
+			}
+			
+			arr[i] = a;
 		
+		}
 		
 		return arr;
+	}
+	public boolean inArray(int[] arr, int num, int index) {
+		
+		boolean present = false;
+		
+		for (int j=0; j<index; j++) {
+			
+			if (arr[j]==num) {
+				
+				present = true;
+				break;
+				
+			}
+			
+		}
+		
+		return present;
+		
 	}
 	public boolean checkForWinner(Button[] buttons)
 	{
